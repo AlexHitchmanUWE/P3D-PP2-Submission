@@ -18,17 +18,17 @@ public class CharacterAnimationController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
-            animator.SetBool("test", true);
+            animator.SetTrigger("pickup");
             Debug.Log("working");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            animator.SetBool("test", false);
+            animator.SetTrigger("take");
             Debug.Log("working");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            animator.SetTrigger("3");
+            animator.SetTrigger("pickobject");
             Debug.Log("working");
         }
     }
