@@ -16,12 +16,12 @@ public class HUD : MonoBehaviour
     {
         
     }
-    public void OpenMessagePanel(string text)
+    public void OpenMessagePanel()
     {
         MessagePanel.SetActive(true);
     }
     public void CloseMessagePanel()
     {
-        MessagePanel.SetActive(true);
+        MessagePanel.SetActive(false);
     }
 }
