@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PickupItem : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class PickupItem : MonoBehaviour
     public GameObject Item;
     public GameObject ColliderBox;
     public HUD Hud;
-    public TMP_Text messageText;
-  
+    public TextMeshProUGUI messageText;
+    public RectTransform HudPanelBox;
+
     void Start()
     {
         ItemOnPlayer.SetActive(false);
+        messageText = FindObjectOfType<TextMeshProUGUI>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -31,11 +34,15 @@ public class PickupItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Hud.OpenMessagePanel();
-        messageText.SetText("Press E to Pickup!");
+        messageText.text= "Press E to Pickup!";
+        HudPanelBox.sizeDelta = new Vector2(1021f, HudPanelBox.sizeDelta.y);
     }
     private void OnTriggerExit(Collider other)
     {
         Hud.CloseMessagePanel();
-        ColliderBox.SetActive(false);
+        if (!Item.activeInHierarchy)
+        {
+            ColliderBox.SetActive(false);
+        }
     }
 }
