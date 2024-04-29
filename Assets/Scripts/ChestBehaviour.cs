@@ -14,6 +14,7 @@ public class ChestBehaviour : MonoBehaviour
     public TextMeshProUGUI messageText;
     public RectTransform HudPanelBox;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +45,7 @@ public class ChestBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Hud.OpenMessagePanel();
-        messageText.text = "Press E to Open Chest!";
-        HudPanelBox.sizeDelta = new Vector2(1221f, HudPanelBox.sizeDelta.y);
-
+        HudPanelBox.SetActive(true);
     }
     private void OnTriggerExit(Collider other)
     {
