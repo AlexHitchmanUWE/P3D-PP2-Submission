@@ -10,6 +10,7 @@ public class ChestBehaviour : MonoBehaviour
     public GameObject ItemOnPlayer;
     public GameObject Item;
     public GameObject ColliderBox;
+    public GameObject HudGameObject;
     public HUD Hud;
     public TextMeshProUGUI messageText;
     public RectTransform HudPanelBox;
@@ -45,7 +46,7 @@ public class ChestBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        HudPanelBox.SetActive(true);
+        HudGameObject.SetActive(true);
     }
     private void OnTriggerExit(Collider other)
     {
