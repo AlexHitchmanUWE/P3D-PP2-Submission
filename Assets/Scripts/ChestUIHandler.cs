@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UIHandler : MonoBehaviour
+public class ChestUIHandler : MonoBehaviour
 {
     public GameObject ChestHud;
-    public TextMeshProUGUI messageText;
-    public RectTransform HudPanelBox;
     public GameObject Item;
+    public GameObject ItemOnPlayer;
     public GameObject ColliderBox;
+    public GameObject ExitHud;
     // Start is called before the first frame update
     void Start()
     {
-        messageText = FindObjectOfType<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -23,7 +22,14 @@ public class UIHandler : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        ChestHud.SetActive(true);
+        if (ItemOnPlayer.activeInHierarchy)
+        {
+            ChestHud.SetActive(true);
+            if (Input.GetKey(KeyCode.E))
+            {
+                ExitHud.SetActive(true);
+            }
+        }
         if (Item.activeInHierarchy)
         {
             ChestHud.SetActive(false);

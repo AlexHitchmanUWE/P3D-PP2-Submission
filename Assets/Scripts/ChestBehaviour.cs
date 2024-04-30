@@ -10,16 +10,11 @@ public class ChestBehaviour : MonoBehaviour
     public GameObject ItemOnPlayer;
     public GameObject Item;
     public GameObject ColliderBox;
-    public GameObject HudGameObject;
-    public HUD Hud;
-    public TextMeshProUGUI messageText;
-    public RectTransform HudPanelBox;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        messageText = FindObjectOfType<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -44,13 +39,8 @@ public class ChestBehaviour : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        HudGameObject.SetActive(true);
-    }
     private void OnTriggerExit(Collider other)
     {
-        Hud.CloseMessagePanel();
         if (Item.activeInHierarchy)
         {
             ColliderBox.SetActive(false);
