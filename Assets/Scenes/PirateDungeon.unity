@@ -4822,11 +4822,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 17a224d1aeb5e59439a4ddda2f1ef3a6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 17a224d1aeb5e59439a4ddda2f1ef3a6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 17a224d1aeb5e59439a4ddda2f1ef3a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
