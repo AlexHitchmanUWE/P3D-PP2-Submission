@@ -16,20 +16,6 @@ public class CharacterAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
-        {
-            animator.SetTrigger("pickup");
-            Debug.Log("working");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            animator.SetTrigger("take");
-            Debug.Log("working");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            animator.SetTrigger("pickobject");
-            Debug.Log("working");
-        }
+      
     }
 }
