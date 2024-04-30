@@ -33,6 +33,7 @@ public class ChestUIHandler : MonoBehaviour
         if (Item.activeInHierarchy)
         {
             ChestHud.SetActive(false);
+            ExitHud.SetActive(true);
             ColliderBox.SetActive(false);
         }
     }
