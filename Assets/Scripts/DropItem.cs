@@ -32,7 +32,7 @@ public class DropItem : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (ItemOnPlayer1 != null && ItemOnPlayer2 != null && (ItemOnPlayer1.activeInHierarchy || ItemOnPlayer2.activeInHierarchy))
+            if (ItemOnPlayer1 != null && ItemOnPlayer2 != null && (ItemOnPlayer1.activeInHierarchy && ItemOnPlayer2.activeInHierarchy))
             {
                 if (Input.GetKey(KeyCode.Alpha1))
                 {

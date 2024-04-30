@@ -5,7 +5,7 @@ using TMPro;
 
 public class UIHandler : MonoBehaviour
 {
-    public HUD Hud;
+    public GameObject ChestHud;
     public TextMeshProUGUI messageText;
     public RectTransform HudPanelBox;
     public GameObject Item;
@@ -21,18 +21,14 @@ public class UIHandler : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        Hud.OpenMessagePanel();
-        messageText.text = "Press E to Open Chest!";
-        HudPanelBox.sizeDelta = new Vector2(1021f, HudPanelBox.sizeDelta.y);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        Hud.CloseMessagePanel();
-        if (!Item.activeInHierarchy)
+        ChestHud.SetActive(true);
+        if (Item.activeInHierarchy)
         {
+            ChestHud.SetActive(false);
             ColliderBox.SetActive(false);
         }
     }
+   
 }
